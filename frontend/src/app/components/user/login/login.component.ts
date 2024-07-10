@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     }else if(!this.validEmail(user.email)){
       Swal.fire('Error', 'Please enter a valid email', 'error');
     }else{
-      this.http.post(`https://fashion-backend-kappa.vercel.app/login`, { email: user.email, password: user.password })
+      this.http.post(`https://localhost:3000/api/v1/users/login`, { email: user.email, password: user.password })
       .subscribe((response:any) => {
         
         // Save token in local storage
