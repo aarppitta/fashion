@@ -43,7 +43,7 @@ app.use(`${api}/contacts`,contactRouter);
 
 app.use('/images', express.static('uploads'));
 //db connection
-mongoose.connect(process.env.CONNECTION_STRING)
+mongoose.connect('mongodb://localhost:27017/fashion')
 .then(() => {
     console.log('Database connection is ready');
 }).catch((err) => {
