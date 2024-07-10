@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient , private cartService:CartService , private router:Router) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:3000/api/v1/products')
+    this.http.get('https://fashion-backend-kappa.vercel.app/api/v1/products')
     .subscribe((product)=>{
       this.products = product;
     },(e)=>{
