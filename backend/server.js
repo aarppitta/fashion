@@ -42,14 +42,17 @@ app.use(`${api}/contacts`,contactRouter);
 
 
 app.use('/images', express.static('uploads'));
-//db connection
-mongoose.connect('mongodb://localhost:27017/fashion')
+
+
+// MongoDB Atlas connection string
+const atlasUri = 'mongodb+srv://root:root@cluster0.example.mongodb.net/myDatabaseName?retryWrites=true&w=majority';
+
+mongoose.connect(atlasUri, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
     console.log('Database connection is ready');
 }).catch((err) => {
     console.log(err);
-}
-);
+});
 
 //server
 
