@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'development') {
 
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:4200']
+    origin: ['*']
 }));
 
 
