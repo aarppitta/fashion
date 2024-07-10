@@ -1,0 +1,83 @@
+
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2">
+            <app-sidebar></app-sidebar>
+        </div>
+
+        <!-- Content -->
+        <div class="col-md-10">
+          <div class="bg-light flex-fill">
+            <div class="p-2 d-md-none d-flex text-white bg-success">
+                <a href="#" class="text-white" 
+                   data-bs-toggle="offcanvas"
+                   data-bs-target="#bdSidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </a>
+                <span class="ms-3">Grocery Shopping</span>
+            </div>
+        </div>
+
+        <div class="p-4">
+        <nav style="--bs-breadcrumb-divider:'>';font-size:14px">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                  <i class="fa-solid fa-house"></i>
+              </li>
+              <li class="breadcrumb-item">Category Record</li>
+          </ol>
+      </nav>
+            <button type="button" class="btn btn-outline-success float-end" routerLink="/productcategory_add"> Add Category Record</button>
+            <br><br>
+            <table class="table table-responsive">
+                <thead class="table-light">
+                    <tr class="text-center">
+                      <th scope="col">No.</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Description</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr class="text-center">
+                        <th scope="1">1</th>
+                        <td>Beer & Alcohol</td>
+                        <td>Url</td>
+                        <td>Made in 18th centuary</td>    
+                        <td>     
+                          <button type="button" class="btn btn-outline-success" routerLink="/productcategory_update"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                      </tr>
+
+                      <tr class="text-center">
+                        <th scope="1">2</th>
+                        <td>Beer & Alcohol</td>
+                        <td>Url</td>
+                        <td>Made in 18th centuary</td>    
+                        <td>     
+                          <button type="button" class="btn btn-outline-success" routerLink="/productcategory_update"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                      </tr>
+                      
+                      <tr class="text-center">
+                        <th scope="1">3</th>
+                        <td>Beer & Alcohol</td>
+                        <td>Url</td>
+                        <td>Made in 18th centuary</td>    
+                        <td>     
+                          <button type="button" class="btn btn-outline-success" routerLink="/productcategory_update"><i class="fa-solid fa-pen-to-square"></i></button>
+                          <button type="button" class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                      </td>
+                      </tr>
+                    </tbody>
+                
+              </table>
+                      
+        </div>
+    </div>
+</div>
