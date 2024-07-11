@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
+const { MongoClient, ServerApiVersion } = require('mongodb');
 
 require('dotenv').config(); // Load environment variables from .env file
 //const api = process.env.API_URL || 'http://localhost:3000';
@@ -49,6 +50,33 @@ app.use(`${api}/contacts`,contactRouter);
 app.use('/images', express.static('uploads'));
 
 
+
+const uri = "mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion";
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // Send a ping to confirm a successful connection
+    await client.db("admin").command({ ping: 1 });
+    console.log("Pinged your deployment. You successfully connected to MongoDB!");
+  } finally {
+    // Ensures that the client will close when you finish/error
+    await client.close();
+  }
+}
+run().catch(console.dir);
+
+/*
 // MongoDB Atlas connection string
 const atlasUri = 'mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion';
 
@@ -58,7 +86,7 @@ const atlasUri = 'mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrit
  }).catch((err) => {
      console.log(err);
  });
-
+*/
 //server
 
 app.listen(3000,()=>{
