@@ -47,7 +47,7 @@ export class RegisterComponent implements OnInit {
       swal.fire('Error', 'Please enter a valid email', 'error');
     }
     else{
-      this.http.post(`https://localhost:3000/api/v1/users/register`, user,{ withCredentials:true }).subscribe(() => {
+      this.http.post(`https://fashion-frontend-liard.vercel.app/register`, user,{ withCredentials:true }).subscribe(() => {
         this.router.navigate(['/login']),(err: any) => {
           swal.fire('Error', err.error.message, 'error');
         }
