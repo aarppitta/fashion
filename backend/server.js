@@ -8,6 +8,7 @@ const errorHandler = require('./helpers/error-handler');
 require('dotenv').config(); // Load environment variables from .env file
 const api = process.env.API_URL || 'http://localhost:3000';
 
+
 if (process.env.NODE_ENV === 'development') {
     console.log('API URL:', api); // Print the API URL in debug mode
 }
@@ -18,6 +19,10 @@ app.use(cors({
     methods:['GET','POST'],
 }));
 
+
+app.get('/',(req,res) => {
+    res.send('Hello World')
+})
 
 //middleware
 app.use(express.json());
@@ -45,7 +50,7 @@ app.use('/images', express.static('uploads'));
 
 
 // MongoDB Atlas connection string
-const atlasUri = 'mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion';
+const atlasUri = process.env.CONNECTION_STRING;
 
 mongoose.connect(atlasUri, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {
