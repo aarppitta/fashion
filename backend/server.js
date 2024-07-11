@@ -50,11 +50,10 @@ app.use('/images', express.static('uploads'));
 
 
 
-const yourMongoDBConnectionString = "mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion";
+const connectionString = "mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion";
 
-const mongoose = require('mongoose');
 
-mongoose.connect(yourMongoDBConnectionString, {
+mongoose.connect(connectionString, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
   serverSelectionTimeoutMS: 45000 // Increase the timeout to 45 seconds
