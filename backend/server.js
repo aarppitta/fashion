@@ -52,7 +52,7 @@ app.use('/images', express.static('uploads'));
 // MongoDB Atlas connection string
 const atlasUri = 'mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion';
 
- mongoose.connect(atlasUri, { useUnifiedTopology: true })
+ mongoose.connect(atlasUri, {  })
  .then(() => {
      console.log('Database connection is ready');
  }).catch((err) => {
