@@ -23,7 +23,7 @@ app.use(cors({
 app.get('/',(req,res) => {
     res.send('Hello World')
 })
-/*
+
 //middleware
 app.use(express.json());
 app.use(authJwt());
@@ -48,7 +48,7 @@ app.use(`${api}/contacts`,contactRouter);
 
 app.use('/images', express.static('uploads'));
 
-*/
+
 // MongoDB Atlas connection string
 const atlasUri = 'mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion';
 
