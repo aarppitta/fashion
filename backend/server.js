@@ -6,9 +6,9 @@ const authJwt = require('./helpers/jwt');
 const errorHandler = require('./helpers/error-handler');
 
 require('dotenv').config(); // Load environment variables from .env file
-const api = process.env.API_URL || 'http://localhost:3000';
+//const api = process.env.API_URL || 'http://localhost:3000';
 
-
+const api = '/api/v1';
 if (process.env.NODE_ENV === 'development') {
     console.log('API URL:', api); // Print the API URL in debug mode
 }
