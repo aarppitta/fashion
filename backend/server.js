@@ -50,7 +50,7 @@ app.use('/images', express.static('uploads'));
 
 
 // MongoDB Atlas connection string
-const atlasUri = process.env.CONNECTION_STRING;
+const atlasUri = 'mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?retryWrites=true&w=majority&appName=fashion';
 
 mongoose.connect(atlasUri, { useNewUrlParser: true, useUnifiedTopology: true })
 .then(() => {

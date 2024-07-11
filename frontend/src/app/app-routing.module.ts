@@ -28,7 +28,7 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   { path:'register', component: RegisterComponent },
   { path:'contact', component: ContactComponent },
-  { path:'veg', component: VegComponent },
+  { path:'women', component: VegComponent },
   { path:'fruits', component: FruitsComponent },
   { path:'beer', component: BeerComponent },
   { path:'product_description', component: ProductDescriptionComponent },
