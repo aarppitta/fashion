@@ -54,8 +54,6 @@ const connectionString = "mongodb+srv://root:root@fashion.2ugsoet.mongodb.net/?r
 
 
 mongoose.connect(connectionString, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
   serverSelectionTimeoutMS: 45000 // Increase the timeout to 45 seconds
 }).then(() => console.log('Connected to MongoDB'))
   .catch(err => console.error('MongoDB connection error:', err));
