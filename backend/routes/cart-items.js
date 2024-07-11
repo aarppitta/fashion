@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Order = require('../models/order');
 const OrderItem = require('../models/order-item')
-const User = require('../models/User');
+const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 const CartItem = require('../models/cart-item');
 
